@@ -9,10 +9,15 @@ var twoSum = function(nums, target) {
         let num = target - nums[i]
     
         if(nums.indexOf(num) != -1){
-            result.push(i)
-            let index = nums.indexOf(num)
-            result.push(index)
-            return result
+            if(i != nums.indexOf(num)){
+
+
+                result.push(i)
+                let index = nums.indexOf(num) 
+                result.push(index)
+                return result
+
+            }
         }
 
 
