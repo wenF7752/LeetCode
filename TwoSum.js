@@ -1,28 +1,16 @@
+const arr1 = [1, 2, 3, 4, 5]
+const t = 4
 
-const nums = [3,2,4]
-var target = 6
-var twoSum = function(nums, target) {
-    result = []
-
-    for(let i = 0; i < nums.length; i++){
-
-        let num = target - nums[i]
-    
-        if(nums.indexOf(num) != -1){
-            if(i != nums.indexOf(num)){
-
-
-                result.push(i)
-                let index = nums.indexOf(num) 
-                result.push(index)
-                return result
-
-            }
-        }
-
-
+const twoSum = (arr, target) => {
+  const map = {}
+  for (let i = 0; i < arr.length; i++) {
+    const num = arr[i]
+    const diff = target - num
+    if (map[diff] !== undefined) {
+      return [map[diff], i]
     }
-    return result += "No solution"
-};
-
-console.log(twoSum(nums, target))
+    map[num] = i
+  }
+  return []
+}
+console.log(twoSum(arr1, t))
